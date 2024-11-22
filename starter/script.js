@@ -6,13 +6,17 @@ const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 console.log(btnsOpenModal);
 
-for (let i = 0; i < btnsOpenModal.length; i++)
-    btnsOpenModal[i].addEventListener('click', function() {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-    });
+/* const openModal = function(){
+    for (let i = 0; i < btnsOpenModal.length; i++)
+        btnsOpenModal[i].addEventListener('click', function() {
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        });
+}
 
-const removeModal = function(event){
+openModal();
+
+const closeModal = function(event){
     event.addEventListener('click', function(){
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
@@ -20,7 +24,29 @@ const removeModal = function(event){
 }
 
 // remove the modal by clicking on the x button
-removeModal(btnCloseModal);
+closeModal(btnCloseModal);
 
 // remove the modal by clicking on the overlay
-removeModal(overlay);
+closeModal(overlay);
+ */
+
+//  OR
+
+const openModal = function(){
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+}
+
+const closeModal = function(){
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+for (let i = 0; i < btnsOpenModal.length; i++)
+    btnsOpenModal[i].addEventListener('click', function() {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    });
+
+    btnCloseModal.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
