@@ -18,6 +18,8 @@ const removeModal = function(event){
         overlay.classList.add('hidden');
     })
 }
+
+// remove the modal by clicking on the x button
 removeModal(btnCloseModal);
 
 // remove the modal by clicking on the overlay
