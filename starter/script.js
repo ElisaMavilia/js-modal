@@ -54,12 +54,10 @@ for (let i = 0; i < btnsOpenModal.length; i++)
     // Adding a keypress escape 
     document.addEventListener('keydown', function(e) {
         //console.log('a key was pressed'); 
-        console.log(e.key);
-        if (e.key === 'Escape'){
-            console.log('Escape was pressed');
-            if (!modal.classList.contains('hidden')){ // if this not contains the hidden class
-                closeModal();
-            }
+        //console.log(e.key);
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')){
+            //console.log('Escape was pressed');
+            closeModal();
         }     
     })
 
